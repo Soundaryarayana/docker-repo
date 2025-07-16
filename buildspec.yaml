@@ -15,7 +15,7 @@ build:
  commands:
   - echo Build started on 'date'
   - echo Building the Docker image...
-  - docker build -t web:1 .
+  - docker build -t web1 .
   - docker tag web:1 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud
 
 post_build:
