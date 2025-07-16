@@ -1,10 +1,16 @@
 version: 0.2
 
 phases:
- pre_build :
+ pre_build:
  commands:
+  - echo "Running pre_build commands"
   - echo logging in to Amazon ECR...
-  - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  - aws ecr get-login-password 
+--region $AWS_DEFAULT_REGION |
+    docker login --username AWS
+ --password-stdin
+     438591665776.dkr.ecr.us-east-1.amazonaws.com
+   
 build:
  commands:
   - echo Build started on 'date'
@@ -14,9 +20,9 @@ build:
 
 post_build:
  commands:
-
   - echo Build completed on 'date'
   - echo pushing the Docker image...
   - docker push 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud
+
 
 
