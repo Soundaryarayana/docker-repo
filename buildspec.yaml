@@ -10,7 +10,7 @@ phases:
     docker login --username AWS
  --password-stdin
      438591665776.dkr.ecr.us-east-1.amazonaws.com
-   build:
+   Build :
  commands:
   - echo "Build started on $ 
   (date)"
@@ -18,7 +18,7 @@ phases:
   - docker build -t web:1 .
   - docker tag web:1 
 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud
-post_build:
+post_build :
  commands:
   - echo "Build completed on $
   (date)"
