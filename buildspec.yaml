@@ -9,19 +9,17 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t web 1 .
-      - docker tag web 1 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud
-
+      - docker build -t sounducloud .
+      - docker tag sounducloud:latest 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud:latest
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud
-
-
+      - docker push 438591665776.dkr.ecr.us-east-1.amazonaws.com/sounducloud:latest
 
 artifacts:
   files:
     - '**/*'
+
 
 
 
