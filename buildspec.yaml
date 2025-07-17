@@ -10,9 +10,9 @@ phases:
     docker login --username AWS
  --password-stdin
      438591665776.dkr.ecr.us-east-1.amazonaws.com
-   Build:
+   Codebuild:
  commands:
-   - echo "Running Build commands"
+   - echo "Running codeBuild commands"
   - echo "Build started on $ 
   (date)"
   - echo "Building the Docker image..."
